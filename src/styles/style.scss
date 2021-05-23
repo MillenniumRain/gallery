@@ -35,44 +35,139 @@ form {
 		&:hover .gallery__remove {
 			display: block;
 		}
-		// &::before {
-		// 	content: 'Загрузка...';
-		// 	z-index: 1;
-		// 	display: flex;
-		// 	justify-content: center;
-		// 	align-items: center;
-		// 	height: 100%;
-		// 	font-size: 3.5em;
-		// 	background: #b9b9b9;
-		// 	color: #717171;
-		// 	position: absolute;
-		// 	width: 100%;
-		// 	top: 0;
-		// 	left: 0;
-		// }
-	}
 
-	.gallery__remove {
-		position: absolute;
-		top: 0;
-		right: 0;
-		padding: 0 5px;
-		background: $removeBack;
-		display: none;
-		z-index: 2;
-		&:hover {
-			background: $removeBHover;
-			cursor: pointer;
+		.gallery__remove {
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 0 5px;
+			background: $removeBack;
+			display: none;
+			z-index: 2;
+			&:hover {
+				background: $removeBHover;
+				cursor: pointer;
+			}
 		}
-	}
-	.gallery__img {
-		// width: 100%;
-		object-fit: cover;
-		height: $photoWidth;
-		display: block;
-		position: relative;
-		z-index: 2;
-		// padding: 0 2px;
+		.gallery__img {
+			// width: 100%;
+			object-fit: cover;
+			height: $photoWidth;
+			display: block;
+			position: relative;
+			z-index: 2;
+			// padding: 0 2px;
+		}
+		.gallery__place {
+			margin: 0 5px 5px 0;
+			width: $photoWidth;
+			height: $photoWidth;
+			.loader {
+				color: #3d9c3d;
+				font-size: 20px;
+				left: 50%;
+				top: 50%;
+				width: 1em;
+				height: 1em;
+				border-radius: 50%;
+				position: relative;
+				text-indent: -9999em;
+				-webkit-animation: load4 1.3s infinite linear;
+				animation: load4 1.3s infinite linear;
+				-webkit-transform: translateZ(0);
+				-ms-transform: translateZ(0);
+				transform: translateZ(0);
+			}
+			@-webkit-keyframes load4 {
+				0%,
+				100% {
+					box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em,
+						2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em,
+						-3em 0 0 -1em, -2em -2em 0 0;
+				}
+				12.5% {
+					box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0,
+						2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em,
+						-3em 0 0 -1em, -2em -2em 0 -1em;
+				}
+				25% {
+					box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em,
+						2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em,
+						-3em 0 0 -1em, -2em -2em 0 -1em;
+				}
+				37.5% {
+					box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0,
+						2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em,
+						-3em 0em 0 -1em, -2em -2em 0 -1em;
+				}
+				50% {
+					box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em,
+						2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0,
+						-3em 0em 0 -1em, -2em -2em 0 -1em;
+				}
+				62.5% {
+					box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em,
+						2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0,
+						-2em -2em 0 -1em;
+				}
+				75% {
+					box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em,
+						2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0,
+						-3em 0em 0 0.2em, -2em -2em 0 0;
+				}
+				87.5% {
+					box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em,
+						2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0,
+						-2em -2em 0 0.2em;
+				}
+			}
+			@keyframes load4 {
+				0%,
+				100% {
+					box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em,
+						2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em,
+						-3em 0 0 -1em, -2em -2em 0 0;
+				}
+				12.5% {
+					box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0,
+						2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em,
+						-3em 0 0 -1em, -2em -2em 0 -1em;
+				}
+				25% {
+					box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em,
+						2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em,
+						-3em 0 0 -1em, -2em -2em 0 -1em;
+				}
+				37.5% {
+					box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0,
+						2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em,
+						-3em 0em 0 -1em, -2em -2em 0 -1em;
+				}
+				50% {
+					box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em,
+						2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0,
+						-3em 0em 0 -1em, -2em -2em 0 -1em;
+				}
+				62.5% {
+					box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em,
+						2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0,
+						-2em -2em 0 -1em;
+				}
+				75% {
+					box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em,
+						2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0,
+						-3em 0em 0 0.2em, -2em -2em 0 0;
+				}
+				87.5% {
+					box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em,
+						2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0,
+						-2em -2em 0 0.2em;
+				}
+			}
+		}
+		.hide {
+			display: none;
+		}
 	}
 }
 

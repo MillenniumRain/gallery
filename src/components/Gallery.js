@@ -39,9 +39,12 @@ export class Gallery {
 		let images = document.querySelectorAll('.gallery__img');
 		let counter = 0;
 
-		images.forEach((val) => {
+		images.forEach((val, index) => {
 			val.onload = () => {
 				counter++;
+				let places = document.querySelectorAll('.gallery__place');
+				places[index].classList.add('hide');
+				images[index].classList.remove('hide');
 				if (counter == images.length) {
 					this.updateGallery();
 				}
@@ -85,8 +88,9 @@ export class Gallery {
 		}
 	}
 	cardTamplate(src, id) {
-		return `<div class="gallery__container">
-			<img  class="gallery__img" src="${src}" alt="" />
+		return `<div class="gallery__container">	
+			<div class="gallery__place "><div class="loader"></div></div>	
+			<img  class="gallery__img hide" src="${src}" alt="" />
 			<div class="gallery__remove">&#10006;</div>
 		</div>`;
 	}
