@@ -7,31 +7,20 @@ export class Gallery {
 			if (e.target.classList.contains('gallery__remove')) this.remove(e);
 		});
 		window.onresize = () => {
-			let img = document.querySelectorAll('.gallery__img');
-			for (let i = 0; i < img.length; i++) {
-				img[i].style = '';
-			}
-			this.resizeImages(img);
+			this.updateGallery();
 		};
 		main.append(this.div);
 	}
-	// timeToResize(params) {
-	// 	setTimeout(() => {
-	// 		let img = document.querySelectorAll('.gallery__img');
-	// 		for (let i = 0; i < img.length; i++) {
-	// 			img[i].style = '';
-	// 		}
-	// 		this.resizeImages(img);
-	// 		this.timeToResize();
-	// 	}, 250);
-	// }
-	remove(e) {
-		e.target.closest('.gallery__container').outerHTML = '';
+	updateGallery() {
 		let img = document.querySelectorAll('.gallery__img');
 		for (let i = 0; i < img.length; i++) {
 			img[i].style = '';
 		}
 		this.resizeImages(img);
+	}
+	remove(e) {
+		e.target.closest('.gallery__container').outerHTML = '';
+		this.updateGallery();
 	}
 	get() {
 		return this.div;
@@ -45,7 +34,6 @@ export class Gallery {
 		});
 		this.div.innerHTML += html;
 		this.resizeImagesOnLoad();
-		// this.timeToResize();
 	}
 	resizeImagesOnLoad() {
 		let images = document.querySelectorAll('.gallery__img');
@@ -55,7 +43,7 @@ export class Gallery {
 			val.onload = () => {
 				counter++;
 				if (counter == images.length) {
-					this.resizeImages(images);
+					this.updateGallery();
 				}
 			};
 		});
@@ -76,7 +64,6 @@ export class Gallery {
 				widthtInRow = images[i + 1]
 					? images[i + 1].offsetWidth
 					: images[i].offsetWidth;
-				// break;
 			} else {
 				countInRow++;
 				widthtInRow += images[i + 1]

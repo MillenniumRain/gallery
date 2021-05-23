@@ -38,6 +38,9 @@ export class Loader {
 			<br>
 			Загрузите изображения с помощью диалога выбора файлов или
 			перетащив нужные изображения в выделенную область
+			<br>
+			<br>
+			URL:
 		</p>`;
 		this.form.append(this.inputUrl);
 		this.form.append(this.inputFile);
