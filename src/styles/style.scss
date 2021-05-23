@@ -21,31 +21,32 @@ form {
 	align-items: flex-start;
 }
 .gallery {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax($photoWidth, 1fr));
-	grid-gap: 1em;
+	// display: grid;
+	// grid-template-columns: repeat(auto-fill, minmax($photoWidth, 1fr));
+	// grid-gap: 1em;
+	// display: inline-flex;
 	margin-bottom: 1em;
 	.gallery__container {
 		position: relative;
-		background: #28ff33;
+		display: inline-block;
 		&:hover .gallery__remove {
 			display: block;
 		}
-		&::before {
-			content: 'Загрузка...';
-			z-index: 1;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 100%;
-			font-size: 3.5em;
-			background: #b9b9b9;
-			color: #717171;
-			position: absolute;
-			width: 100%;
-			top: 0;
-			left: 0;
-		}
+		// &::before {
+		// 	content: 'Загрузка...';
+		// 	z-index: 1;
+		// 	display: flex;
+		// 	justify-content: center;
+		// 	align-items: center;
+		// 	height: 100%;
+		// 	font-size: 3.5em;
+		// 	background: #b9b9b9;
+		// 	color: #717171;
+		// 	position: absolute;
+		// 	width: 100%;
+		// 	top: 0;
+		// 	left: 0;
+		// }
 	}
 
 	.gallery__remove {
@@ -62,12 +63,13 @@ form {
 		}
 	}
 	.gallery__img {
-		width: 100%;
+		// width: 100%;
 		object-fit: cover;
 		height: $photoWidth;
 		display: block;
 		position: relative;
 		z-index: 2;
+		// padding: 0 2px;
 	}
 }
 
