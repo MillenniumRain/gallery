@@ -27,8 +27,11 @@ export class Gallery {
 	// }
 	remove(e) {
 		e.target.closest('.gallery__container').outerHTML = '';
-		let images = document.querySelectorAll('.gallery__img');
-		this.resizeImages(images);
+		let img = document.querySelectorAll('.gallery__img');
+		for (let i = 0; i < img.length; i++) {
+			img[i].style = '';
+		}
+		this.resizeImages(img);
 	}
 	get() {
 		return this.div;
