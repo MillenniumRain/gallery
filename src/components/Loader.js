@@ -15,7 +15,7 @@ export class Loader {
 		this.div.className = 'drop-area';
 
 		this.div.ondragover = function (e) {
-			this.className = 'hover';
+			this.classList.add('hover');
 			return false;
 		};
 
@@ -27,7 +27,8 @@ export class Loader {
 		this.div.ondrop = function (e) {
 			const files = this.querySelector('input[type="file"]');
 			files.files = e.dataTransfer.files;
-			this.className = 'drop';
+			this.classList.remove('hover');
+			this.classList.add('drop');
 			return false;
 		};
 		this.form = document.createElement('FORM');

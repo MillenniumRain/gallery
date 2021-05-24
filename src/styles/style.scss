@@ -171,19 +171,21 @@ form {
 	}
 }
 
-#drop-area {
-	border: 2px solid #ccc;
+.drop-area {
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	margin: 2em 4em;
+	// border: 2px solid #ccc;
 	font-family: sans-serif;
-	margin: 1em auto;
+	// margin: 1em auto;
 	padding: 20px;
 	position: relative;
 	overflow: hidden;
-	.hover {
-		border-color: #4d4af5;
+	&.hover {
+		box-shadow: 0 10px 20px #2567f53a, 0 6px 6px #2567f53a;
 	}
-	.drop {
-		border-color: #28ff33;
-	}
+	// &.drop {
+	// 	box-shadow: 0 10px 20px #01c7013a, 0 6px 6px #01c7013a;
+	// }
 }
 @media (max-width: 1100px) {
 	.gallery {
