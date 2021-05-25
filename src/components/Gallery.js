@@ -53,7 +53,7 @@ export class Gallery {
 	}
 	resizeImages(images) {
 		let countInRow = 1;
-		let widthtInRow = images[0].offsetWidth;
+		let widthtInRow = images[0].closest('.gallery__container')?.offsetWidth;
 		for (let i = 0; i < images.length; i++) {
 			if (widthtInRow > gallery.offsetWidth) {
 				this.resizeImagesInRow(
@@ -65,13 +65,13 @@ export class Gallery {
 				);
 				countInRow = 1;
 				widthtInRow = images[i + 1]
-					? images[i + 1].offsetWidth
-					: images[i].offsetWidth;
+					? images[i + 1].closest('.gallery__container').offsetWidth
+					: images[i].closest('.gallery__container').offsetWidth;
 			} else {
 				countInRow++;
 				widthtInRow += images[i + 1]
-					? images[i + 1].offsetWidth
-					: images[i].offsetWidth;
+					? images[i + 1].closest('.gallery__container').offsetWidth
+					: images[i].closest('.gallery__container').offsetWidth;
 			}
 		}
 	}
